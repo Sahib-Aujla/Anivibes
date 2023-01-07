@@ -11,8 +11,18 @@ export const animeApi=createApi({
     }}),
     endpoints:(builder)=>({
         getAnimes:builder.query({
-            query:() =>{
-        return `/popular?page=1`;
+            query:({genreIdOrCategoryName, page, searchQuery }) =>{
+                if(searchQuery){
+                    return ``
+                }
+                if(genreIdOrCategoryName==='popular' || genreIdOrCategoryName==='recent-release'|| genreIdOrCategoryName==='anime-movies' ){
+                    return `/${genreIdOrCategoryName}?page=${page}`
+                }
+                if(genreIdOrCategoryName && typeof genreIdOrCategoryName === 'string'){
+                    return `/genre/${genreIdOrCategoryName}?page=${page}`
+                }
+
+        return `/popular?page=${page}`;
 
             }
         })

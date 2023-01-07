@@ -31,8 +31,8 @@ const [mobileOpen, setMobileOpen] = useState(false)
           <Search />
         </Toolbar>
       </AppBar>
-      <div>
-        <nav className={classes.drawer}>
+      <div style={{ width: '320px' }}>
+        <nav className={classes.drawer} style={{marginLeft:'240px'}}>
           {isMobile ? (
             <Drawer
               variant="temporary"
@@ -42,7 +42,7 @@ const [mobileOpen, setMobileOpen] = useState(false)
               classes={{ paper: classes.drawPaper }}
               ModalProps={{ keepMounted: true }}
 
-            ><Sidebar setMobileOpen={setMobileOpen} />
+            ><Sidebar setMobileOpen={setMobileOpen}  />
             </Drawer>
           ) : (<Drawer variant="permanent" open classes={{ paper: classes.drawPaper }}><Sidebar setMobileOpen={setMobileOpen} /></Drawer>)}
         </nav>

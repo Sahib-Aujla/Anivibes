@@ -7,7 +7,6 @@ export default makeStyles((theme) => ({
   links: {
     alignItems: 'center',
     fontWeight: 'bolder',
-   
     [theme.breakpoints.up('xs')]: {
       display: 'flex',
       flexDirection: 'column',
