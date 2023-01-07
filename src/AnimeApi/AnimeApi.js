@@ -13,7 +13,7 @@ export const animeApi=createApi({
         getAnimes:builder.query({
             query:({genreIdOrCategoryName, page, searchQuery }) =>{
                 if(searchQuery){
-                    return ``
+                    return `/search?keyw=${searchQuery}&page=${page}`
                 }
                 if(genreIdOrCategoryName==='popular' || genreIdOrCategoryName==='recent-release'|| genreIdOrCategoryName==='anime-movies' ){
                     return `/${genreIdOrCategoryName}?page=${page}`
