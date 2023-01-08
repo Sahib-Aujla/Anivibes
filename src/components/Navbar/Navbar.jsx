@@ -33,7 +33,7 @@ const [mobileOpen, setMobileOpen] = useState(false)
           <Search />
         </Toolbar>
       </AppBar>
-      <div style={{ width: '320px' }}>
+      <div className={classes.navDiv} >
         <nav className={classes.drawer} style={{marginLeft:'240px'}}>
           {isMobile ? (
             <Drawer

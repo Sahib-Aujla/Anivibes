@@ -28,6 +28,14 @@ export default makeStyles((theme) => ({
     },
 
   },
+  player:{
+    height:'90%',
+    width:'90%',
+    [theme.breakpoints.down('sm')]:{
+        width:'100% !important',
+        height:'100%',
+    }
+  },
   genresContainer: {
     margin: '10px 0 !important',
     display: 'flex',
@@ -73,16 +81,9 @@ export default makeStyles((theme) => ({
     width: '50%',
     height: '50%',
     [theme.breakpoints.down('sm')]: {
-      width: '90%',
-      height: '90%',
+      width: '70%',
+      height: '70%',
     },
   },
-  player:{
-    height:'80%',
-    width:'80%',
-    [theme.breakpoints.down('md')]:{
-        width:'100%',
-        height:'100%',
-    }
-  }
+  
 }));

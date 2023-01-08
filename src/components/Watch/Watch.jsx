@@ -29,7 +29,7 @@ const Watch = () => {
       }
       const episode=animeData?.episodesList?.find((ep)=>ep.episodeId===epid)  
   return (
-    <Grid container className={classes.containerSpaceAround}>
+    <Grid container className={classes.containerSpaceAround} >
      <Grid item container direction="column" lg={5}>
     <Typography variant="h3" align="center" gutterBottom>
           {animeData?.animeTitle} ({animeData?.releasedDate})
@@ -38,7 +38,7 @@ const Watch = () => {
           Episode : {episode.episodeNum}
           </Typography>
     </Grid>
-<Grid item sm={12} lg={12} display='flex' alignItems='center' justifyContent='center'>
+<Grid item sm={12} lg={12} display='flex' alignItems='center' justifyContent='center' style={{width:'100%'}}>
 <ReactPlayer
      url={data?.sources_bk[0].file}
     config={{

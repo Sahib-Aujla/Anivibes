@@ -34,4 +34,11 @@ export default makeStyles((theme) => ({
       textDecoration: 'none',
     },
   },
+  navDiv:{
+    width:'240px',
+    [theme.breakpoints.down('sm')]: {
+      width:0,
+
+    },
+  }
 }));
