@@ -85,5 +85,17 @@ export default makeStyles((theme) => ({
       height: '70%',
     },
   },
-  
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '15px',
+  },
+  button: {
+    margin: '10px 30px !important',
+  },
+  pageNumber: {
+    margin: '0 20px !important',
+    color: theme.palette.text.primary,
+  },
 }));
