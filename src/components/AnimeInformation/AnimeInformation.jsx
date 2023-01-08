@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import useStyles from  './styles'
-import { Box,CircularProgress,Grid,Typography,Button, ButtonGroup, } from '@mui/material'
+import { Box,CircularProgress,Grid,Typography,Button, } from '@mui/material'
 import { useGetAnimeDetailQuery } from '../../AnimeApi/AnimeApi'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
@@ -75,7 +75,7 @@ const {data,isFetching,error}=useGetAnimeDetailQuery(id);
         <Grid item container style={{ marginTop: '2rem',display:'flex',flexWrap:'wrap' }}>
         
             {data?.episodesList?.map((ep)=>(
-                <Button size="medium" variant="outlined" key={ep?.episodeNum} target="_blank" rel="noopener noreferrer" href={ep?.episodeUrl}
+                <Button size="medium" variant="outlined" key={ep?.episodeNum}  href={`/watch/${id}/${ep?.episodeId}`}
                     style={{width:'40px',margin:'4px'}}
                  >ep- {ep?.episodeNum}</Button>
 
@@ -85,6 +85,7 @@ const {data,isFetching,error}=useGetAnimeDetailQuery(id);
         </>
         }
         </Box>
+        
     </Grid>
   )
 }

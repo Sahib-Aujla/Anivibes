@@ -1,16 +1,18 @@
 import { AppBar,IconButton, Toolbar,Drawer } from '@mui/material'
 import { Menu,Brightness4, Brightness7 } from '@mui/icons-material';
-import React, {useState} from 'react';
+import React, {useState,useContext} from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import useStyles from './styles';
 import {Search,Sidebar} from '../constants'
 import useTheme from '@mui/material/styles/useTheme';
+import { ColorModeContext } from '../../utils/ToggleColorMode';
+
 
 const Navbar = () => {
     const classes = useStyles();
     const isMobile = useMediaQuery('(max-width:600px)');
 const theme = useTheme();
-
+const colorMode=useContext(ColorModeContext);
 const [mobileOpen, setMobileOpen] = useState(false)
   return (
     <>
@@ -24,7 +26,7 @@ const [mobileOpen, setMobileOpen] = useState(false)
             onClick={() => setMobileOpen((prevMobileOpen) => !prevMobileOpen)}
           ><Menu />
           </IconButton>}
-          <IconButton color="inherit" sx={{ ml: 1 }} onClick={() => {}}>
+          <IconButton color="inherit" sx={{ ml: 1 }} onClick={colorMode.toggleColorMode}>
 
 {theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
 </IconButton>

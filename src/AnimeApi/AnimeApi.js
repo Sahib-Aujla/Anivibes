@@ -30,11 +30,14 @@ export const animeApi=createApi({
             query:(id) =>{
                 return `/anime-details/${id}`
             }
+        }),
+        getAnimeStream:builder.query({
+            query:(id)=> `/vidcdn/watch/${id}`
         })
     })
 })
 
-export const { useGetAnimesQuery,useGetAnimeDetailQuery } = animeApi;
+export const { useGetAnimesQuery,useGetAnimeDetailQuery,useGetAnimeStreamQuery } = animeApi;
 
 // const axios = require("axios");
 
