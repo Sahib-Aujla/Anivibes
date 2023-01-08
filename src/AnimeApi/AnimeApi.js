@@ -25,11 +25,16 @@ export const animeApi=createApi({
         return `/popular?page=${page}`;
 
             }
+        }),
+        getAnimeDetail:builder.query({
+            query:(id) =>{
+                return `/anime-details/${id}`
+            }
         })
     })
 })
 
-export const { useGetAnimesQuery } = animeApi;
+export const { useGetAnimesQuery,useGetAnimeDetailQuery } = animeApi;
 
 // const axios = require("axios");
 

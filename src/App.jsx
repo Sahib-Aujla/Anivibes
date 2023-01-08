@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { BrowserRouter,Routes,Route } from "react-router-dom"
-import {Navbar,Footer,Explore} from './components/constants'
+import {Navbar,Footer,Explore,AnimeInformation} from './components/constants'
 import {CssBaseline} from '@mui/material'
 import useStyles from './styles'
 function App() {
@@ -16,7 +16,7 @@ function App() {
     <div className={classes.toolbar} />
     <Routes>
       <Route path="/" exact element={<Explore />} />
-      <Route path="/anime/:id"   />
+      <Route path="/anime/:id" element={<AnimeInformation/>}  />
       <Route path="/movie/:id"  />
       <Route path="/search/:searchTerm"   />
 
